@@ -2,12 +2,17 @@
 
 ini adalah project Tugas Besar Logika & Matematika Distrik
 
-# tahap pertama 
+# tahap pertama : donwload
+
+dengan cara:
+
 ## download zip
 * click code warna hijau
 * download zip
 * extract zip kedalam folder
 * buka folder
+
+atau
 
 ## clone repository 
 ```python

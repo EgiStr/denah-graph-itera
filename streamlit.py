@@ -214,16 +214,21 @@ def main():
     if st.sidebar.button("Cari Jalur Terpendek"):
         # find the shortest path
         path, sum_weight = find_shortest_path(G, source_node, target_node)
-        # visualize the shortest path
-        visualize_shortest_path(G, path)
-        # show the shortest path
-        for i in range(len(path)):
-            if i == len(path) - 1:
-                st.sidebar.write(path[i])
-            else:
-                st.sidebar.write(path[i], "-> ", end="")
-                
-        st.sidebar.write("Jarak Terpendek: ", sum_weight, "km")
+
+        # if path is empty then there is no path
+        if len(path) == 0:
+            st.sidebar.write("Tidak ada jalur yang tersedia")
+        else:  
+            # visualize the shortest path
+            visualize_shortest_path(G, path)
+            # show the shortest path
+            for i in range(len(path)):
+                if i == len(path) - 1:
+                    st.sidebar.write(path[i])
+                else:
+                    st.sidebar.write(f"{path[i]} -> ")
+                    
+            st.sidebar.write("Jarak Terpendek: ", sum_weight, "km")
 
     else:
         visualize_graph(G)
